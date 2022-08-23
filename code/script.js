@@ -8,7 +8,7 @@ const chat = document.getElementById('chat');
 
 // This function will add a chat bubble in the correct place based on who the sender is
 const showMessage = (message, sender) => {
-  // the if statement checks if the sender is 'user' and if that's the case it inserts an html senction inside the chat with the posted message
+  // the if statement checks if the sender is 'user' and if that's the case it inserts an html section inside the chat with the posted message
   if (sender === 'user') {
     chat.innerHTML += `
       <section class="user-msg">
@@ -29,6 +29,7 @@ const showMessage = (message, sender) => {
       </section>
     `
   }
+
   // This little thing makes the chat scroll to the last message when there are too many to be shown in the chat box
   chat.scrollTop = chat.scrollHeight;
 }
@@ -37,6 +38,7 @@ const showMessage = (message, sender) => {
 const greeting = () => {
   // here we call the function showMessage, that we declared earlier with the argument "Hello there, What's your name?" for message, and the argument "bot" for sender
   showMessage("Hello there, What's your name?", 'bot');
+  showMessage("hello", "user");
   // Just to check it out, change 'bot' to 'user' here 👆
 }
 
